@@ -3,4 +3,4 @@
 	url = https://github.com/Tropby/EBCpp.git
 [submodule "dep/Nuklear"]
 	path = dep/Nuklear
-	url = https://github.com/Immediate-Mode-UI/Nuklear.git
+	url = https://github.com/Tropby/Nuklear.git
