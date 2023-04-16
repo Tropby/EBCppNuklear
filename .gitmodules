@@ -1,0 +1,6 @@
+[submodule "dep/EBCpp"]
+	path = dep/EBCpp
+	url = https://github.com/Tropby/EBCpp.git
+[submodule "dep/Nuklear"]
+	path = dep/Nuklear
+	url = https://github.com/Immediate-Mode-UI/Nuklear.git
