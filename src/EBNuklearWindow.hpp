@@ -1,10 +1,9 @@
 #pragma once
 
 #include <thread>
-
+#include <EBEventLoop.hpp>
 #include <EBNuklear.hpp>
 #include <EBNuklearRow.hpp>
-#include <profile/EBLogger.hpp>
 
 namespace EBCpp::Nuklear
 {
@@ -60,7 +59,7 @@ namespace EBCpp::Nuklear
             }
             nk_end(ctx);
 
-            nk_gdi_render(nk_rgb(30, 30, 30));
+            nk_gdi_render(nk_rgb(30, 30, 30));            
         }
 
     protected:

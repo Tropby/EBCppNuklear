@@ -13,7 +13,7 @@ namespace EBCpp::Nuklear
 
             }
 
-            virtual void render(struct nk_context *ctx) const 
+            virtual void render(struct nk_context *ctx)  
             {
                 
             }

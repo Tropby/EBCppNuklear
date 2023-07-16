@@ -13,7 +13,7 @@ namespace EBCpp::Nuklear
 
             }
 
-            void render(struct nk_context *ctx) const override
+            void render(struct nk_context *ctx) override
             {
                 nk_label(ctx, text.dataPtr(), alignment);                                
             }

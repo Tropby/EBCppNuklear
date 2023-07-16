@@ -14,9 +14,9 @@ namespace EBCpp::Nuklear
 
             }
 
-            void render(struct nk_context *ctx) const override
+            void render(struct nk_context *ctx) override
             {
-                nk_layout_row_static(ctx, height, 100, columns);
+                nk_layout_row_dynamic(ctx, height, columns);
 
                 for( const auto &w : widgets)
                 {
