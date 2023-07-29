@@ -15,3 +15,4 @@
 #include <EBNuklearLabel.hpp>
 #include <EBNuklearButton.hpp>
 #include <EBNuklearLineEdit.hpp>
+#include <EBNuklearCheckbox.hpp>

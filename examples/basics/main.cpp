@@ -26,12 +26,17 @@ class BasicExample : public EBCpp::EBObject<BasicExample>
 
             lineEdit = EBCreate<EBCpp::Nuklear::EBNuklearLineEdit>();
             lineEdit->setText("Ein Text!");
-            lineEdit->textChanged.connect(this, &BasicExample::textChanged);
+            lineEdit->textChanged.connect(this, &BasicExample::lineEditTextChanged);
+
+            checkBox = EBCreate<EBCpp::Nuklear::EBNuklearCheckbox>();
+            checkBox->setText("Checkbox!");
+            checkBox->changed.connect(this, &BasicExample::checkboxChanged);
 
             row = EBCreate<EBCpp::Nuklear::EBNuklearRow>(25, 1);
             row->addWidget(label->cast<EBCpp::Nuklear::EBNuklearWidget>());
             row->addWidget(button->cast<EBCpp::Nuklear::EBNuklearWidget>());
             row->addWidget(lineEdit.cast<EBCpp::Nuklear::EBNuklearWidget>());
+            row->addWidget(checkBox.cast<EBCpp::Nuklear::EBNuklearWidget>());
 
             test->setCentralWidget(row->cast<EBCpp::Nuklear::EBNuklearWidget>());
 
@@ -45,30 +50,31 @@ class BasicExample : public EBCpp::EBObject<BasicExample>
         EBPtr<EBCpp::Nuklear::EBNuklearLabel> label;
         EBPtr<EBCpp::Nuklear::EBNuklearButton> button;
         EBPtr<EBCpp::Nuklear::EBNuklearLineEdit> lineEdit;
+        EBPtr<EBCpp::Nuklear::EBNuklearCheckbox> checkBox;
 
         EBCpp::EBTimer timer;
-
-        static inline int counter = 0;
 
         EB_SLOT(timeout)
         {
             EBCpp::EBString text;
-            //text = "Hellorld! ";
-            //text = text + EBCpp::EBUtils::intToStr(counter++);
-            text = "Watched Objects: ";
+            text = "Watched EBObjects: ";
             text = text + EBCpp::EBUtils::intToStr(EBCpp::EBObjectWatchBase::getCount());
-            text = text + " Shared Pointer: ";
+            text = text + " Shared EBPointer: ";
             text = text + EBCpp::EBUtils::intToStr(EBCpp::EBObjectPointerBase::getCounter());
             label->setText(text);
         }
 
+        EB_SLOT(checkboxChanged)
+        {            
+            checkBox->setText( checkBox->getState() ? "ON" : "OFF" );
+        }
+
         EB_SLOT(buttonClicked)
         {
-            counter = 0;
             label->setText("");
         }
 
-        EB_SLOT(textChanged)
+        EB_SLOT(lineEditTextChanged)
         {
             label->setText(lineEdit->getText());
         }
