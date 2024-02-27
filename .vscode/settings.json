@@ -1,6 +1,7 @@
 {
     "sonarlint.pathToCompileCommands": "${workspaceFolder}\\build\\compile_commands.json",
     "files.associations": {
+        "*.embeddedhtml": "html",
         "*.tcc": "cpp",
         "compare": "cpp",
         "random": "cpp",
@@ -9,6 +10,7 @@
         "numeric": "cpp",
         "cmath": "cpp",
         "tuple": "cpp",
-        "type_traits": "cpp"
+        "type_traits": "cpp",
+        "thread": "cpp"
     }
 }

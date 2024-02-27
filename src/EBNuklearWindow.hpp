@@ -1,6 +1,8 @@
 #pragma once
 
 #include <thread>
+#include <codecvt>
+
 #include <EBEventLoop.hpp>
 #include <EBNuklear.hpp>
 #include <EBNuklearRow.hpp>
@@ -10,7 +12,7 @@ namespace EBCpp::Nuklear
     class EBNuklearWindow : public EBNuklearWidget
     {
     public:
-        EBNuklearWindow(int32_t width, int32_t height) : font(nullptr), ctx(nullptr), width(width), height(height), running(true),
+        EBNuklearWindow(int32_t width, int32_t height) : wnd(0), font(nullptr), ctx(nullptr), width(width), height(height), running(true),
                                                          windowThread(std::thread(&EBNuklearWindow::createWindow, this)), centralWidget(nullptr)
         {
             windowCount++;
@@ -75,7 +77,7 @@ namespace EBCpp::Nuklear
             memset(&wc, 0, sizeof(wc));
             wc.style = CS_DBLCLKS;
             wc.hInstance = GetModuleHandleW(0);
-            wc.hIcon = LoadIcon(NULL, IDI_APPLICATION);
+            wc.hIcon = LoadIcon(wc.hInstance, MAKEINTRESOURCE(IDI_ICON1));
             wc.hCursor = LoadCursor(NULL, IDC_ARROW);
             wc.lpszClassName = "NuklearWindowClass";
             wc.lpfnWndProc = &EBNuklearWindow::windowProcBase;
@@ -89,6 +91,10 @@ namespace EBCpp::Nuklear
                                   nullptr, nullptr, wc.hInstance, nullptr);
 
             SetWindowLongPtr(wnd, GWLP_USERDATA, (LONG_PTR)(this));
+
+            HICON icon = LoadIcon(GetModuleHandleW(0), MAKEINTRESOURCE(IDI_ICON1));
+            SendMessage(wnd, WM_SETICON, ICON_SMALL, (LPARAM)icon);
+            SendMessage(wnd, WM_SETICON, ICON_BIG, (LPARAM)icon);
 
             dc = GetDC(wnd);
 

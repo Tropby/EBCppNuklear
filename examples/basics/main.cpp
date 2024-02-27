@@ -1,3 +1,4 @@
+#include "resource.h"
 
 // Allways inclue Nuklear Implemtation first
 #include <EBNuklearImplementation.hpp>
@@ -55,11 +56,11 @@ class BasicExample : public EBCpp::EBObject<BasicExample>
         EBCpp::EBTimer timer;
 
         EB_SLOT(timeout)
-        {
+        {           
             EBCpp::EBString text;
             text = "Watched EBObjects: ";
             text = text + EBCpp::EBUtils::intToStr(EBCpp::EBObjectWatchBase::getCount());
-            text = text + " Shared EBPointer: ";
+            text = text + "; Shared EBPointer: ";
             text = text + EBCpp::EBUtils::intToStr(EBCpp::EBObjectPointerBase::getCounter());
             label->setText(text);
         }

@@ -10,7 +10,7 @@ namespace EBCpp::Nuklear
         public:
             EBNuklearLineEdit(int length = 2048) : maxLength(length)
             {
-                data = new char(length);
+                data = new char[length];
                 memset(data, 0, sizeof(data));
             }
 
