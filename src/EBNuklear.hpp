@@ -16,3 +16,5 @@
 #include <EBNuklearButton.hpp>
 #include <EBNuklearLineEdit.hpp>
 #include <EBNuklearCheckbox.hpp>
+#include <EBNuklearProgressBar.hpp>
+#include <EBNuklearSlider.hpp>
