@@ -12,6 +12,11 @@
         "tuple": "cpp",
         "type_traits": "cpp",
         "thread": "cpp",
-        "bitset": "cpp"
+        "bitset": "cpp",
+        "iosfwd": "cpp",
+        "xlocbuf": "cpp",
+        "chrono": "cpp",
+        "array": "cpp",
+        "string_view": "cpp"
     }
 }

@@ -18,3 +18,6 @@
 #include <EBNuklearCheckbox.hpp>
 #include <EBNuklearProgressBar.hpp>
 #include <EBNuklearSlider.hpp>
+#include <EBNuklearRadioGroup.hpp>
+#include <EBNuklearCombobox.hpp>
+#include <EBNuklearColorPicker.hpp>

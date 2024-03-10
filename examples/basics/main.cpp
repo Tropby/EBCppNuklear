@@ -15,7 +15,7 @@ class BasicExample : public EBCpp::EBObject<BasicExample>
     public:
         BasicExample()
         {
-            window = EBCreate<EBCpp::Nuklear::EBNuklearWindow>(400, 400);
+            window = EBCreate<EBCpp::Nuklear::EBNuklearWindow>(400, 400, "EBCpp Nuklear");
             window->setFont("Arial", 9);
 
             row = EBCreate<EBCpp::Nuklear::EBNuklearRow>(30, 1);
@@ -57,6 +57,23 @@ class BasicExample : public EBCpp::EBObject<BasicExample>
             labelSlider = EBCreate<EBCpp::Nuklear::EBNuklearLabel>();
             row->addWidget(labelSlider);
 
+            radioGroup = EBCreate<EBCpp::Nuklear::EBNuklearRadioGroup>();
+            radioGroup->addItem("easy");
+            radioGroup->addItem("hard");
+            radioGroup->setCurrentIndex(0);
+            row->addWidget(radioGroup);
+
+            combobox = EBCreate<EBCpp::Nuklear::EBNuklearCombobox>();
+            combobox->addItem("first");
+            combobox->addItem("second");
+            combobox->addItem("third");
+            combobox->setCurrentIndex(0);
+            row->addWidget(combobox);
+
+            colorPicker = EBCreate<EBCpp::Nuklear::EBNuklearColorPicker>();
+            colorPicker->setColor(255, 0, 0);
+            row->addWidget(colorPicker);
+
             timer.timeout.connect(this, &BasicExample::timeout);
             timer.start(1000);
         }
@@ -71,6 +88,9 @@ class BasicExample : public EBCpp::EBObject<BasicExample>
         EBPtr<EBCpp::Nuklear::EBNuklearProgressBar> progressbar;
         EBPtr<EBCpp::Nuklear::EBNuklearSlider> slider;
         EBPtr<EBCpp::Nuklear::EBNuklearLabel> labelSlider;
+        EBPtr<EBCpp::Nuklear::EBNuklearRadioGroup> radioGroup;
+        EBPtr<EBCpp::Nuklear::EBNuklearCombobox> combobox;
+        EBPtr<EBCpp::Nuklear::EBNuklearColorPicker> colorPicker;
 
         EBCpp::EBTimer timer;
 

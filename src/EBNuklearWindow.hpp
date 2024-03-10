@@ -12,7 +12,7 @@ namespace EBCpp::Nuklear
     class EBNuklearWindow : public EBNuklearWidget
     {
     public:
-        EBNuklearWindow(int32_t width, int32_t height) : wnd(0), font(nullptr), ctx(nullptr), width(width), height(height), running(true),
+        EBNuklearWindow(int32_t width, int32_t height, EBString title) : title(title), wnd(0), font(nullptr), ctx(nullptr), width(width), height(height), running(true),
                                                          windowThread(std::thread(&EBNuklearWindow::createWindow, this)), centralWidget(nullptr)
         {
             windowCount++;
@@ -85,7 +85,7 @@ namespace EBCpp::Nuklear
 
             AdjustWindowRectEx(&rect, style, FALSE, exstyle);
 
-            wnd = CreateWindowExA(exstyle, wc.lpszClassName, "Nuklear GDI Demo",
+            wnd = CreateWindowExA(exstyle, wc.lpszClassName, title.dataPtr(),
                                   style | WS_VISIBLE, CW_USEDEFAULT, CW_USEDEFAULT,
                                   rect.right - rect.left, rect.bottom - rect.top,
                                   nullptr, nullptr, wc.hInstance, nullptr);
@@ -193,6 +193,7 @@ namespace EBCpp::Nuklear
         HWND wnd;
 
         // Window Data
+        EBString title;
         struct nk_context *ctx;
         int width;
         int height;
