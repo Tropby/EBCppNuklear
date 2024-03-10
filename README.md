@@ -1,6 +1,8 @@
 # EBCppNuklear
 
-EBNuklear is a extension to EBCpp using teh library by [Immediate-Mode-UI/Nuklear](https://github.com/Immediate-Mode-UI/Nuklear) to create a GUI interface.
+EBCppNuklear is a extension to EBCpp using teh library by [Immediate-Mode-UI/Nuklear](https://github.com/Immediate-Mode-UI/Nuklear) to create a GUI interface.
+
+Windows ONLY!
 
 ## Minimal Example
 
