@@ -16,3 +16,5 @@ include(ebcpp_nuklear.cmake)
 
 add_subdirectory(examples/basics)
 include_directories(examples/basics)
+
+add_subdirectory(examples/minimal)

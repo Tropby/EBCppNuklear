@@ -1,2 +1,2 @@
 #include "resource.h"
-IDI_ICON1               ICON        DISCARDABLE             icon.ico
+IDI_NUKLEAR_ICON              ICON        DISCARDABLE             icon.ico

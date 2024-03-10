@@ -77,7 +77,9 @@ namespace EBCpp::Nuklear
             memset(&wc, 0, sizeof(wc));
             wc.style = CS_DBLCLKS;
             wc.hInstance = GetModuleHandleW(0);
-            wc.hIcon = LoadIcon(wc.hInstance, MAKEINTRESOURCE(IDI_ICON1));
+            #ifdef IDI_NUKLEAR_ICON
+            wc.hIcon = LoadIcon(wc.hInstance, MAKEINTRESOURCE(IDI_NUKLEAR_ICON));
+            #endif
             wc.hCursor = LoadCursor(NULL, IDC_ARROW);
             wc.lpszClassName = "NuklearWindowClass";
             wc.lpfnWndProc = &EBNuklearWindow::windowProcBase;
@@ -92,9 +94,11 @@ namespace EBCpp::Nuklear
 
             SetWindowLongPtr(wnd, GWLP_USERDATA, (LONG_PTR)(this));
 
-            HICON icon = LoadIcon(GetModuleHandleW(0), MAKEINTRESOURCE(IDI_ICON1));
-            SendMessage(wnd, WM_SETICON, ICON_SMALL, (LPARAM)icon);
-            SendMessage(wnd, WM_SETICON, ICON_BIG, (LPARAM)icon);
+            #ifdef IDI_NUKLEAR_ICON
+                HICON icon = LoadIcon(GetModuleHandleW(0), MAKEINTRESOURCE(IDI_NUKLEAR_ICON));
+                SendMessage(wnd, WM_SETICON, ICON_SMALL, (LPARAM)icon);
+                SendMessage(wnd, WM_SETICON, ICON_BIG, (LPARAM)icon);
+            #endif
 
             dc = GetDC(wnd);
 

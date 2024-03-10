@@ -1,1 +1,1 @@
-#define IDI_ICON1 101 //or other number id. 
+#define IDI_NUKLEAR_ICON 101 //or other number id. 

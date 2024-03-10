@@ -1,12 +1,3 @@
-# EBCppNuklear
-
-EBNuklear is a extension to EBCpp using teh library by [Immediate-Mode-UI/Nuklear](https://github.com/Immediate-Mode-UI/Nuklear) to create a GUI interface.
-
-## Minimal Example
-
-This example shows how to create a window with a label.
-
-```C++
 // Allways inclue Nuklear Implemtation first
 #include <EBNuklearImplementation.hpp>
 
@@ -36,10 +27,3 @@ class MinimalExample : public EBCpp::EBObject<MinimalExample>
 };
 
 EB_APPLICATION(MinimalExample);
-```
-
-Example produces this window with the "Hellorld!" label.
-
-![Hellorld Window](media/Hellorld.png)
-
-More examples can be found in the example directory.
