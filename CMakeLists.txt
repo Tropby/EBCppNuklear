@@ -15,6 +15,5 @@ set(EBCPP_NUKLEAR_RENDERER GDI)
 include(ebcpp_nuklear.cmake)
 
 add_subdirectory(examples/basics)
-include_directories(examples/basics)
-
 add_subdirectory(examples/minimal)
+add_subdirectory(examples/chart)

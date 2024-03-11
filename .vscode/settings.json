@@ -18,6 +18,12 @@
         "chrono": "cpp",
         "array": "cpp",
         "string_view": "cpp",
-        "*.rh": "cpp"
+        "*.rh": "cpp",
+        "optional": "cpp",
+        "ratio": "cpp",
+        "system_error": "cpp",
+        "functional": "cpp",
+        "regex": "cpp",
+        "utility": "cpp"
     }
 }

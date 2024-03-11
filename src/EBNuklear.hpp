@@ -21,3 +21,4 @@
 #include <EBNuklearRadioGroup.hpp>
 #include <EBNuklearCombobox.hpp>
 #include <EBNuklearColorPicker.hpp>
+#include <EBNuklearChart.hpp>
